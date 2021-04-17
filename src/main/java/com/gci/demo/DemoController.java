@@ -1,5 +1,6 @@
 package com.gci.demo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/demo")
 public class DemoController {
+    @Autowired
+    private ClientDao clientDao;
 
     /**
      * Demo REST GET endpoint that returns a string
@@ -52,6 +55,7 @@ public class DemoController {
     @RequestMapping("/post")
     @ResponseBody
     public String demoPost(@RequestBody Client client) {
+        clientDao.createClient(client);
         return "Hello " + client.getName() + "! I can call you at " + client.getPhoneNumber() + ".";
     }
 }
