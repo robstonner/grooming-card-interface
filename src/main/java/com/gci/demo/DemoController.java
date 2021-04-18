@@ -41,6 +41,13 @@ public class DemoController {
         Client client = new Client();
         client.setName("Robert");
         client.setPhoneNumber("6604736583");
+        Address address = new Address();
+        address.setLine1("1001 E Madison St");
+        address.setLine2("");
+        address.setCity("Springfield");
+        address.setState("MO");
+        address.setZipCode("65802");
+        client.setAddress(address);
         return client;
     }
 
