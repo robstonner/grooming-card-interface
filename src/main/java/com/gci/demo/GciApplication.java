@@ -1,8 +1,6 @@
 package com.gci.demo;
 
-import java.util.List;
 import org.slf4j.Logger;
-import java.util.Arrays;
 
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,8 +28,38 @@ public class GciApplication implements CommandLineRunner {
 					logger.info("DROPPING TABLES ON STARTUP");
 					jdbcTemplate.update("DROP TABLE IF EXISTS client;");
 					jdbcTemplate.update("CREATE TABLE client ("
+						+ "id SERIAL PRIMARY KEY, "
 						+ "name VARCHAR, "
-						+ "phone_number VARCHAR"
+						+ "phone_number VARCHAR, "
+						+ "phone_number_alt VARCHAR, "
+						+ "address_id INTEGER"
+						+ ");");
+					jdbcTemplate.update("DROP TABLE IF EXISTS address;");
+					jdbcTemplate.update("CREATE TABLE address ("
+						+ "id SERIAL PRIMARY KEY, "
+						+ "line1 VARCHAR, "
+						+ "line2 VARCHAR, "
+						+ "city VARCHAR, "
+						+ "state VARCHAR, "
+						+ "zip_code VARCHAR"
+						+ ");");
+					jdbcTemplate.update("DROP TABLE IF EXISTS pet;");
+					jdbcTemplate.update("CREATE TABLE pet ("
+						+ "id SERIAL PRIMARY KEY, "
+						+ "client_id INTEGER, "
+						+ "name VARCHAR, "
+						+ "breed VARCHAR, "
+						+ "medical_notes VARCHAR, "
+						+ "age INTEGER, "
+						+ "vaccinated BOOLEAN"
+						+ ");");
+					jdbcTemplate.update("DROP TABLE IF EXISTS appointment;");
+					jdbcTemplate.update("CREATE TABLE appointment ("
+						+ "id SERIAL PRIMARY KEY, "
+						+ "client_id INTEGER, "
+						+ "date DATE, "
+						+ "time TIME, "
+						+ "description VARCHAR"
 						+ ");");
 			}
 		}

@@ -1,0 +1,28 @@
+{
+    "name":"Robert",
+    "phoneNumber":"6604736583",
+    "phoneNumberAlt":"5555555555",
+    "address":{
+        "line1":"1001 E Madison St",
+        "line2":"",
+        "city":"Springfield",
+        "state":"MO",
+        "zipCode":"65807"
+    },
+    "pets":[
+        {
+            "name":"Callie",
+            "breed":"Calico",
+            "age":12,
+            "vaccinated":true,
+            "medicalNotes":"cute"
+        }
+    ],
+    "appointments":[
+        {
+            "date":"09-01-1997",
+            "time":"13:00:00",
+            "description":"test"
+        }
+    ]
+}

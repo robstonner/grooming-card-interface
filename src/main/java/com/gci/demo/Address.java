@@ -1,13 +1,22 @@
 package com.gci.demo;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * Object representing an address.
  */
 public class Address {
+    @JsonProperty("id")
+    private Integer id;
+    @JsonProperty("line1")
     private String line1;
+    @JsonProperty("line2")
     private String line2;
+    @JsonProperty("city")
     private String city;
+    @JsonProperty("state")
     private String state;
+    @JsonProperty("zipCode")
     private String zipCode;
 
     public Address() {
@@ -52,6 +61,14 @@ public class Address {
 
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
+    }
+
+    public Integer getId() {
+        return this.id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
 }

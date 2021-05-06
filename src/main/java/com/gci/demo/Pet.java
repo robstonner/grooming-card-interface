@@ -6,6 +6,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * Object representing pet information for a client.
  */
 public class Pet {
+    @JsonProperty("id")
+    private Integer id;
+    @JsonProperty("client_id")
+    private Integer clientId;
     @JsonProperty("name")
     private String name;
     @JsonProperty("breed")
@@ -63,6 +67,22 @@ public class Pet {
 
     public void setMedicalNotes(String medicalNotes) {
         this.medicalNotes = medicalNotes;
+    }
+
+    public Integer getId() {
+        return this.id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getClientId() {
+        return this.clientId;
+    }
+
+    public void setClientId(Integer clientId) {
+        this.clientId = clientId;
     }
 
 }

@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * Object representing an individual client grooming card.
  */
 public class Client {
+    @JsonProperty("id")
+    private Integer id;
     @JsonProperty("name")
     private String name;
     @JsonProperty("phoneNumber")
@@ -16,8 +18,6 @@ public class Client {
     private String phoneNumberAlt;
     @JsonProperty("address")
     private Address address;
-    @JsonProperty("vet")
-    private Vet vet;
     @JsonProperty("pets")
     private List<Pet> pets;
     @JsonProperty("appointments")
@@ -51,14 +51,6 @@ public class Client {
         this.phoneNumberAlt = phoneNumberAlt;
     }
 
-    public Vet getVet() {
-        return this.vet;
-    }
-
-    public void setVet(Vet vet) {
-        this.vet = vet;
-    }
-
     public Address getAddress() {
         return this.address;
     }
@@ -81,6 +73,14 @@ public class Client {
 
     public void setAppointments(List<Appointment> appointments) {
         this.appointments = appointments;
+    }
+
+    public Integer getId() {
+        return this.id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
 }
