@@ -12,13 +12,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Appointment {
     @JsonProperty("id")
     private Integer id;
-    @JsonProperty("client_id")
+    @JsonProperty("clientId")
     private Integer clientId;
     @JsonProperty("date")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate date;
     @JsonProperty("time")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm:ss")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm")
     private LocalTime time;
     @JsonProperty("description")
     private String description;

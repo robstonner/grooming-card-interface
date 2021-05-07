@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Pet {
     @JsonProperty("id")
     private Integer id;
-    @JsonProperty("client_id")
+    @JsonProperty("clientId")
     private Integer clientId;
     @JsonProperty("name")
     private String name;

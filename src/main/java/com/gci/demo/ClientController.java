@@ -42,4 +42,18 @@ public class ClientController {
             }
         }
     }
+
+    @PostMapping
+    @RequestMapping("/addappointment")
+    @ResponseBody
+    public void addAppointment(@RequestBody Appointment appointment) {
+        clientDao.createAppointment(appointment);
+    }
+
+    @PostMapping
+    @RequestMapping("/addpet")
+    @ResponseBody
+    public void addPet(@RequestBody Pet pet) {
+        clientDao.createPet(pet);
+    }
 }
